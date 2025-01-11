@@ -58,5 +58,5 @@ spec:
   ports:
   - port: 27017
     name: mongo
-  ClusterIP: None
+  clusterIP: None
 
