@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mongo
+  name: mongodb
   namespace: chatapp
 spec:
   selector:
     matchLabels:
-      app: mongo
-  serviceName: "mongo"
+      app: mongodb
+  serviceName: "mongodb"
   replicas: 3
   template:
     metadata:
       labels:
-        app: mongo
+        app: mongodb
     spec:
       containers:
-      - name: mongo
+      - name: mongodb
         image: mongo:6.0
         ports:
         - containerPort: 27017
@@ -51,10 +51,10 @@ metadata:
   name: mongo
   namespace: chatapp
   labels:
-    app: mongo
+    app: mongodb
 spec:
   selector:
-    app: mongo
+    app: mongodb
   ports:
   - port: 27017
     name: mongo
